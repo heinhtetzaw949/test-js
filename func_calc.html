@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #result{
+            width: 200px;
+            height: 10px;
+            display: inline-block;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+
+
+
+
+        <h1>Area Calculator</h1>
+            <div class="">
+                <span> Result : </span>
+                <span id="result"></span>
+                <button id="store" onclick="mouse()">Store</button>
+                <button id="del" onclick="right()">Clear</button>
+            </div>
+            <br>
+            <div class="">
+                <input type="number" id="width" placeholder="width">
+                <input type="number" id="breadth" placeholder="breadth">
+                <input type="button" value="Calculate" onclick="calc()" id="click">
+            </div>
+
+           <ul id="list">
+           </ul>
+
+            
+<script>
+
+
+    let width = document.getElementById("width");
+    let breadth = document.getElementById("breadth");
+    let result = document.getElementById("result");
+    let store = document.getElementById("store");
+    let list = document.getElementById("list");
+    let del = document.getElementById("del");
+
+    function calc(){
+        if(width.value == 0 || breadth.value == 0){
+            alert("No");
+        }else{
+            let r = `${width.value}ft x ${breadth.value}ft = ${width.value * breadth.value}ft<sup>2</sup>`;
+        result.innerHTML = r;
+        width.value = "";
+        breadth.value = "";
+        }
+    }
+
+
+    function mouse(){
+         if(result.innerHTML == ""){
+            alert("no");
+         }else{
+            list.innerHTML += `
+           <li>${result.innerHTML}</li>   
+            `;
+            right();
+         }
+                  
+    }
+
+    function right(){
+        result.innerHTML = "";
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

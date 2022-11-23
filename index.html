@@ -16,7 +16,24 @@
 
      
         
+            let record = [];
+            let index = 0;
 
+
+            function saverecord(w,b){
+                record[index] = {
+                    w,
+                    b,
+                };
+                index++;
+            }
+
+            function calcArea(w,b){
+                let calc = w * b;
+                let result = calc + " ft";
+                saverecord(w,b);
+                return result;
+            }
        
 
 

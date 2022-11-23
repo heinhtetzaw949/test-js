@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        legend{
+            margin: auto;
+        }
+
+        #control{
+            display: inline-block;
+            /* margin: auto 100px; */
+        }
+     
+
+       fieldset{
+        text-align: center;
+        margin: auto;
+       }
+
+        p{
+            text-align: center;
+        }
+
+        .box{
+            text-align: center;
+            margin-top: 100px;
+        }
+
+
+
+      
+    </style>
+</head>
+<body>
+    
+
+
+
+    <div class="box">
+        <form class="form" id="control">
+            <fieldset>
+                <legend>Text Control</legend>
+
+                <label for="">Text</label>
+                <input type="text" name="" id="text">
+
+                <label for="">Color</label>
+                <input type="color" name="" id="color">
+
+                <label for="FontSize">FontSize</label>
+                <input type="range" name="" id="FontSize" min="10" max="100">
+
+                <select name="" id="fontfamily">
+                    <option value="Elephant">Elephant</option>
+                    <option value="Forte Regular">Forte Regular</option>
+                    <option value="Gigi Regular">Gigi Regular</option>
+                </select>
+
+                <button >Click ME</button>
+            </fieldset>
+
+            <p id="output">Min Ga Lar Par</p>
+           
+        </form>
+    </div>
+
+<script>
+
+        let text = document.getElementById("text");
+        let color = document.getElementById("color");
+        let FontSize= document.getElementById("FontSize");
+        let fontfamily = document.getElementById("fontfamily");
+        let output = document.getElementById("output");
+        let control = document.getElementById("control");
+
+
+        // text.addEventListener("keyup",function(){
+        //    output.innerText = this.value;
+        // })
+
+        // color.addEventListener("change",function(){
+        //     output.style.color = this.value;
+        // })
+
+        // FontSize.addEventListener("change",function(){
+        //     output.style.fontSize = this.value + "px";
+        // })
+
+        // fontfamily.addEventListener("change",function(){
+        //    output.style.fontFamily = this.value;
+        // })
+
+
+
+        control.addEventListener("submit",function(e){
+
+        //     console.log
+            e.preventDefault();
+           output.innerText = text.value;
+            output.style.color = color.value;
+            output.style.fontSize = FontSize.value + "px";
+           output.style.fontFamily = fontfamily.value;
+           this.reset();
+
+        })
+
+
+
+</script>
+
+
+</body>
+</html>
